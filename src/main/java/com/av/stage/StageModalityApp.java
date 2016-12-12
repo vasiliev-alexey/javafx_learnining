@@ -1,4 +1,4 @@
-/**
+package com.av.stage; /**
  * Created by alexey on 07.12.16.
  */
 
