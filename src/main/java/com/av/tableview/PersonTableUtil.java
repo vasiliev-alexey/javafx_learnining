@@ -27,7 +27,7 @@ public class PersonTableUtil {
         return FXCollections.<Person>observableArrayList(p1, p2, p3, p4, p5,
         new Person("Иван", "Иванов", null),
                 new Person("Петр", "Петров", null),
-                new Person("Александр", "Кокорин", null),
+                new Person("Александр", "Кокорин", LocalDate.of(2015, 4, 20)),
                 new Person("Василий", "Березуцкий", null),
                 new Person("Семен", "Семенов", null),
                 new Person("Петр", "Мамаев", null),

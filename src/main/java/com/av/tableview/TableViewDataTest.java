@@ -29,6 +29,7 @@ public class TableViewDataTest extends Application {
                 new TableView<>(PersonTableUtil.getPersonList());
 // Create an "Age" computed column
         TableColumn<Person, String> ageCol = new TableColumn<>("Age");
+        ageCol.setSortable(false);
         ageCol.setCellValueFactory(cellData -> {
             Person p = cellData.getValue();
             LocalDate dob = p.getBirthDate();
@@ -52,12 +53,18 @@ public class TableViewDataTest extends Application {
         ageCategoryCol.setCellValueFactory(
                 new PropertyValueFactory<>("ageCategory"));
 // Add columns to the TableView
+        TableColumn<Person , String> firstNameColumn =  PersonTableUtil.getFirstNameColumn();
+        TableColumn<Person, String> lastNmeecolumn = PersonTableUtil.getLastNameColumn();
         table.getColumns().addAll(PersonTableUtil.getIdColumn(),
-                PersonTableUtil.getFirstNameColumn(),
-                PersonTableUtil.getLastNameColumn(),
+                firstNameColumn,
+                lastNmeecolumn,
                 PersonTableUtil.getBirthDateColumn(),
                 ageCol,
                 ageCategoryCol);
+        table.getSortOrder().addAll(firstNameColumn , lastNmeecolumn);
+
+
+
         HBox root = new HBox(table);
         root.setStyle("-fx-padding: 10;" +
                 "-fx-border-style: solid inside;" +
