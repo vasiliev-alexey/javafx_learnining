@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by alexey on 13.12.16.
+ * Created by vasiliev-alexey on 13.12.16.
  */
 public class Person {
     // An enum for age categories
@@ -17,7 +17,6 @@ public class Person {
         BABY, CHILD, TEEN, ADULT, SENIOR, UNKNOWN
     }
 
-    ;
     private final ReadOnlyIntegerWrapper personId =
             new ReadOnlyIntegerWrapper(this, "personId", personSequence.incrementAndGet());
     private final StringProperty firstName =
@@ -57,7 +56,7 @@ public class Person {
         firstNameProperty().set(firstName);
     }
 
-    public final StringProperty firstNameProperty() {
+    private final StringProperty firstNameProperty() {
         return firstName;
     }
 
@@ -70,7 +69,7 @@ public class Person {
         lastNameProperty().set(lastName);
     }
 
-    public final StringProperty lastNameProperty() {
+    private final StringProperty lastNameProperty() {
         return lastName;
     }
 
